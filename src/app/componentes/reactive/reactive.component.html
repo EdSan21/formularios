@@ -1,6 +1,6 @@
-<h4>Formularios<small>Reactivos</small></h4>
+<h4>Formularios<small> Reactivos</small></h4>
 <hr>
-<form autocomplete="off" [formGroup]="forma">
+<form style="margin: 0 0 45px 0;" autocomplete="off" [formGroup]="forma">
     <div class="form-group row">
         <label class="col-2 col-form-label" for="Nombre">Nombre</label>
         <div class="col">
@@ -61,4 +61,22 @@
         </div>
     </div>
 
+    <div class="form-group row" formGroupName="direccion">
+        <label class="col-2 col-form-label">Dirección</label>
+        <div class="col">
+            <input class="form-control" type="text" placeholder="municipio" formControlName="municipio" [class.is-invalid]="municipioNoValido">
+            <small *ngIf="municipioNoValido" class="text-danger">
+                Ingrese el municipio
+            </small>
+        </div>
+
+        <div class="col">
+            <input class="form-control" type="text" placeholder="ciudad" formControlName="ciudad" [class.is-invalid]="ciudadNoValido">
+            <small *ngIf="ciudadNoValido" class="text-danger">
+                Ingrese la ciudad
+            </small>
+        </div>
+
+    </div>
+    <button type="submit" class="btn btn-dark">Guardar</button>
 </form>

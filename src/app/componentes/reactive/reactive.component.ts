@@ -45,10 +45,10 @@ export class ReactiveComponent implements OnInit {
     return this.forma.get('usuario')?.invalid && this.forma.get('usuario')?.touched
   }
   get municipioNoValido(){
-    return this.forma.get('municipio')?.invalid && this.forma.get('direccion.municipio')?.touched
+    return this.forma.get('direccion.municipio')?.invalid && this.forma.get('direccion.municipio')?.touched
   }
   get ciudadNoValido(){
-    return this.forma.get('ciudad')?.invalid && this.forma.get('direccion.ciudad')?.touched
+    return this.forma.get('direccion.ciudad')?.invalid && this.forma.get('direccion.ciudad')?.touched
   }
   get pass1NoValido(){
     return this.forma.get('pass1')?.invalid && this.forma.get('pass1')?.touched

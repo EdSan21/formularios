@@ -6,42 +6,66 @@
     </nav>
 </body>
 
-<form>
+<form autocomplete="off" [formGroup]="forma">
+
     <div class="container show-top-margin separate-rows tall-rows">
+        <h4>Formulario <small>Edvin Pérez</small></h4>
+        <hr>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputNombre">Nombre</label>
-                <input type="text" class="form-control" id="inputNombre" placeholder="Marisa">
+                <input formControlName="nombre" [class.is-invalid]="nombreNoValido" type="text" class="form-control" id="inputNombre" placeholder="name">
+                <small *ngIf="nombreNoValido" class="text-danger">
+                    Ingrese el nombre.
+                </small>
             </div>
 
             <div class="form-group col-md-6">
                 <label for="inputApellido">Apellido</label>
-                <input type="text" class="form-control" id="inputApellido" placeholder="Smith Math">
+                <input formControlName="apellido" [class.is-invalid]="apellidoNoValido" type="text" class="form-control" id="inputApellido" placeholder="last name">
+                <small *ngIf="apellidoNoValido" class="text-danger">
+                    Ingrese el apellido.
+                </small>
             </div>
 
             <div class="form-group col-md-6">
                 <label for="inputEmail">Email</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="marisasmith@example.com">
+                <input formControlName="correo" [class.is-invalid]="correoNoValido" type="email" class="form-control" id="inputEmail" placeholder="email">
+                <small *ngIf="correoNoValido" class="text-danger">
+                    Ingrese el correo.
+                </small>
             </div>
 
             <div class="form-group col-md-6">
                 <label for="inputUsuario">Usuario</label>
-                <input type="text" class="form-control" id="inputUsuario" placeholder="Marisii_21">
+                <input formControlName="usuario" [class.is-invalid]="usuarioNoValido" type="text" class="form-control" id="inputUsuario" placeholder="user">
+                <small *ngIf="usuarioNoValido" class="text-danger">
+                    Ingrese el usuario.
+                </small>
             </div>
 
             <div class="form-group col-md-6">
                 <label for="inputPassword">Contraseña</label>
-                <input type="password" class="form-control" id="inputPassword" placeholder="MyPassword123">
+                <input formControlName="pass1" [class.is-invalid]="pass1NoValido" type="password" class="form-control" id="inputPassword" placeholder="password">
+                <small *ngIf="pass1NoValido" class="text-danger">
+                    Ingrese la contraseña.
+                </small>
             </div>
 
             <div class="form-group col-md-6">
                 <label for="inputValPassword">Confirmar Contraseña</label>
-                <input type="password" class="form-control" id="inputValPassword" placeholder="MyPassword123">
+                <input formControlName="pass2" [class.is-invalid]="pass2NoValido" type="password" class="form-control" id="inputValPassword" placeholder="same password">
+                <small *ngIf="pass2NoValido" class="text-danger">
+                    Ingrese la misma contraseña.
+                </small>
             </div>
         </div>
         <div class="form-group">
             <label for="inputDireccion">Dirección</label>
-            <input type="text" class="form-control" id="inputDireccion" placeholder="Boulevar Proceres 18-41 Zona 10">
+            <input formControlName="direccion" [class.is-invalid]="direccionNoValido" type="text" class="form-control" id="inputDireccion" placeholder="Address">
+            <small *ngIf="direccionNoValido" class="text-danger">
+                Ingrese la dirección.
+            </small>
         </div>
         <button type="submit" class="btn btn-dark">Guardar</button>
     </div>
